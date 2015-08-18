@@ -36,15 +36,20 @@ class GymListing: PFObject, PFSubclassing {
         set { self.parseEquipment = NSArray(array: newValue) }
     }
     
+    @NSManaged var parsePrice: Int
+    var price: USCents {
+        return self.parsePrice
+    }
+    
     // MARK: Initializers
-    required init(title: String, streetAddress: String, zipCode: String, picture: UIImage) {
+    required init(title: String, streetAddress: String, zipCode: String, price: USCents, picture: UIImage) {
         super.init()
-        
         
         self.parseTitle = title
         self.parseLocation = ["street": streetAddress, "zip": zipCode]
         self.parsePicture = UIImagePNGRepresentation(picture) ?? NSData()
         self.parseEquipment = NSArray()
+        self.parsePrice = price
     }
     
     // MARK: Class Initializers
