@@ -12,6 +12,8 @@ import GradientView
 class DiscoverViewController: UITableViewController {
     // MARK: Lifecycle
     override func viewDidLoad() {
+        super.viewDidLoad()
+        
         self.tableView.layoutMargins = UIEdgeInsets()
         self.tableView.reloadData()
     }
