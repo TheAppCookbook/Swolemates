@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>D80D9E92-D3ED-46DD-AA41-BC6AAB13C547</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Swolemates</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>6DA15F7A4FEEA9848523451C9A412550A62AB1A1</key>
+		<string>github.com:TheAppCookbook/Swolemates.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Swolemates.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>6DA15F7A4FEEA9848523451C9A412550A62AB1A1</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:TheAppCookbook/Swolemates.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>6DA15F7A4FEEA9848523451C9A412550A62AB1A1</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>6DA15F7A4FEEA9848523451C9A412550A62AB1A1</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Swolemates</string>
+		</dict>
+	</array>
+</dict>
+</plist>

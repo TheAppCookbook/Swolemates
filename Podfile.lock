@@ -1,11 +1,13 @@
 PODS:
   - ACBInfoPanel (0.0.1)
   - Bolts/Tasks (1.2.0)
+  - GradientView (2.0.3)
   - Parse (1.8.0):
     - Bolts/Tasks (>= 1.2.0)
 
 DEPENDENCIES:
   - ACBInfoPanel (from `git@github.com:TheAppCookbook/templates.git`, branch `master`)
+  - GradientView
   - Parse
 
 EXTERNAL SOURCES:
@@ -21,6 +23,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   ACBInfoPanel: 186db7784366d9a331d406e02a9da58b61e1b55e
   Bolts: d176cb1e0012175589e389a9db49b85e27787576
+  GradientView: 9234da5037b5ecf7a15f973e8da1efbd879abcd9
   Parse: 6ea05adb378fbfd6f8726ab67ef74330d96fc903
 
 COCOAPODS: 0.38.2

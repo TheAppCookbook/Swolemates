@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FE31ED3BC54F4BF2417C8013"
-               BuildableName = "Parse.framework"
-               BlueprintName = "Parse"
+               BlueprintIdentifier = "D23853B1212B30F8DDB0FDC2"
+               BuildableName = "GradientView.framework"
+               BlueprintName = "GradientView"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

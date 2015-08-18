@@ -7,22 +7,43 @@
 //
 
 import UIKit
+import GradientView
 
-class DiscoverViewController: UIViewController {
-    // MARK: Properties
-    @IBOutlet var tableView: UITableView!
+class DiscoverViewController: UITableViewController {
+    // MARK: Lifecycle
+    override func viewDidLoad() {
+        self.tableView.layoutMargins = UIEdgeInsets()
+        self.tableView.reloadData()
+    }
 }
 
 extension DiscoverViewController: UITableViewDataSource {
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+   override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        return tableView.dequeueReusableCellWithIdentifier("GymListing") as! UITableViewCell
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("GymListing") as! UITableViewCell
+        
+        let imageView = cell.viewWithTag(1) as! UIImageView
+        imageView.image = UIImage(named: "TestImage")
+        
+        let topGradientView = cell.viewWithTag(5) as! GradientView
+        topGradientView.colors = [
+            UIColor(white: 0.0, alpha: 0.6),
+            UIColor(white: 0.0, alpha: 0.0)
+        ]
+        
+        let bottomGradientView = cell.viewWithTag(6) as! GradientView
+        bottomGradientView.colors = [
+            UIColor(white: 0.0, alpha: 0.0),
+            UIColor(white: 0.0, alpha: 0.6)
+        ]
+        
+        return cell
     }
 }

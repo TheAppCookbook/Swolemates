@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>GradientView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Parse.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,22 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>27DE5B8882EB90E65E063D0B595B8FC3</key>
+		<key>03F2BAE5EE0AADBD4D3282C0EE71BA06</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2AC0689DDF5795B709552299DD892A66</key>
+		<key>0A91C50CE5AFFA41D22F74282AAD3DC0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BBA5D87E4CA3146C7F1654054C4BD9A9</key>
+		<key>12E43E43987AF40CC2FE4D34714295BF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C16601DC9E953410368854F9E7529520</key>
+		<key>5EAE7BED2C1045A5B954C5D50E2ADB4D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F0AA8CC233C0AC9A1BD49AAD957520C7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
