@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>ACBInfoPanel.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Bolts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Parse.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>27DE5B8882EB90E65E063D0B595B8FC3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2AC0689DDF5795B709552299DD892A66</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BBA5D87E4CA3146C7F1654054C4BD9A9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C16601DC9E953410368854F9E7529520</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
