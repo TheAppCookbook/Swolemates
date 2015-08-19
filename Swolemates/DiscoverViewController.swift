@@ -13,6 +13,7 @@ import Parse
 class DiscoverViewController: UITableViewController {
     // MARK: Properties
     private var listings: [GymListing] = []
+    private var presentedFirstAbout: Bool = false
     
     // MARK: Lifecycle
     override func viewDidLoad() {
@@ -26,18 +27,26 @@ class DiscoverViewController: UITableViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        if PFUser.currentUser()?.venmoUsername == nil {
-            self.performSegueWithIdentifier("Login", sender: nil)
-        }
-        
         self.reloadData()
+        
+        if PFUser.currentUser()?.email == nil {
+            if !self.presentedFirstAbout {
+                self.performSegueWithIdentifier("PresentAbout", sender: nil)
+                self.presentedFirstAbout = true
+            } else {
+                self.performSegueWithIdentifier("PresentLogin", sender: nil)
+            }
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         switch segue.identifier {
         case .Some("PushDetail"):
             let listing = sender as! GymListing
-            (segue.destinationViewController as! ListingViewController).listing = listing
+            
+            let listingVC = segue.destinationViewController as! ListingViewController
+            listingVC.listing = listing
+            
         default:
             break
         }
@@ -50,7 +59,7 @@ class DiscoverViewController: UITableViewController {
     // MARK: Data Handlers
     func reloadData() {
         GymListing.allFromServer { (listings: [GymListing]) in
-            self.listings = listings
+            self.listings = listings.reverse()
             self.tableView.reloadData()
         }
     }
@@ -58,6 +67,11 @@ class DiscoverViewController: UITableViewController {
     // MARK: Repsponders
     func listingWasSaved(notification: NSNotification!) {
         self.reloadData()
+    }
+    
+    @IBAction func refreshControlWasTrigger(sender: UIRefreshControl!) {
+        self.reloadData()
+        sender.endRefreshing()
     }
 }
 
@@ -76,6 +90,12 @@ extension DiscoverViewController: UITableViewDataSource {
         
         let imageView = cell.viewWithTag(1) as! UIImageView
         imageView.setImageWithURL(listing.photoURL)
+        
+        let titleLabel = cell.viewWithTag(2) as! UILabel
+        titleLabel.text = listing.title
+        
+        let priceLabel = cell.viewWithTag(4) as! UILabel
+        priceLabel.text = "$\(listing.price)/hr"
         
         let topGradientView = cell.viewWithTag(5) as! GradientView
         topGradientView.colors = [

@@ -10,30 +10,82 @@ import UIKit
 import Parse
 
 class LoginViewController: UIViewController {
+    // MARK: Properties
+    @IBOutlet var emailInputField: UITextField!
+    @IBOutlet var passwordInputField: UITextField!
+    @IBOutlet var registerButton: UIButton!
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet var detailTextLabel: UILabel!
+    @IBOutlet var forgotPasswordButton: UIButton!
+    
+    private var inputValid: Bool {
+        return (self.emailInputField.text.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 0) &&
+            (self.passwordInputField.text.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 0)
+    }
+    
     // MARK: Responders
-    @IBAction func loginButtonWasPressed(sender: UIButton!) {
-        let usernameRequestController = UIAlertController(title: "Venmo Username",
-            message: "Please input your Venmo Username",
-            preferredStyle: UIAlertControllerStyle.Alert)
+    @IBAction func registerButtonWasPressed(sender: UIButton!) {
+        self.emailInputField.resignFirstResponder()
+        self.passwordInputField.resignFirstResponder()
         
-        usernameRequestController.addTextFieldWithConfigurationHandler(nil)
-        usernameRequestController.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
-        usernameRequestController.addAction(UIAlertAction(title: "OK", style: .Default) { (action: UIAlertAction!) in
-            let text = (usernameRequestController.textFields?.first as? UITextField)?.text
-            if text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) <= 0 {
-                return
-            }
-            
-            PFUser.currentUser()?.venmoUsername = text
-            
-            self.dismissViewControllerAnimated(true,
-                completion: nil)
+        let successHandler = {
             self.presentingViewController?.dismissViewControllerAnimated(true,
                 completion: nil)
-        })
+        }
         
-        self.presentViewController(usernameRequestController,
-            animated: true,
-            completion: nil)
+        if let currentUser = PFUser.currentUser() {
+            self.registerButton.hidden = true
+            self.activityIndicator.startAnimating()
+            
+            let email = self.emailInputField.text
+            let password = self.passwordInputField.text
+            
+            PFUser.logInWithUsernameInBackground(email, password: password) { (user: PFUser?, error: NSError?) in
+                if user != nil {
+                    PFUser.become(user!.sessionToken!)
+                    successHandler()
+                } else {
+                    currentUser.email = email
+                    currentUser.username = email
+                    currentUser.password = password
+                    
+                    currentUser.signUpInBackgroundWithBlock { (success: Bool, error: NSError?) in
+                        if success {
+                            PFUser.become(currentUser.sessionToken!)
+                            successHandler()
+                        } else {
+                            self.registerButton.hidden = false
+                            self.activityIndicator.stopAnimating()
+                            
+                            self.detailTextLabel.text = "Whoops! Something went wrong 🙊"
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    @IBAction func forgotPasswordButtonWasPressed(sender: UIButton!) {
+        PFUser.requestPasswordResetForEmailInBackground(self.emailInputField.text, block: { (success: Bool, error: NSError?) in
+            if success {
+                self.detailTextLabel.text = "Alright! Go check your email 🐵"
+            } else {
+                self.detailTextLabel.text = "Drat! Something went wrong 🙉"
+            }
+        })
+    }
+    
+    func inputChanged() {
+        self.registerButton.enabled = self.inputValid
+        self.registerButton.alpha = self.registerButton.enabled ? 1.0 : 0.5
+        
+        self.forgotPasswordButton.hidden = (self.emailInputField.text.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) == 0)
+    }
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        self.inputChanged()
+        return true
     }
 }

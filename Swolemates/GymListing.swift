@@ -20,13 +20,18 @@ class GymListing: PFObject, PFSubclassing {
         return self.parseTitle
     }
     
-    @NSManaged var parseLocation: NSDictionary
-    var streetAddress: String {
-        return self.parseLocation["street"] as! String
+    @NSManaged var parsePrice: Int
+    var price: Int {
+        return self.parsePrice
     }
     
-    var zipCode: String {
-        return self.parseLocation["zip"] as! String
+    @NSManaged var parseEmail: String
+    var email: String {
+        return self.parseEmail
+    }
+    
+    var username: String {
+        return self.parseEmail.componentsSeparatedByString("@")[0]
     }
     
     @NSManaged var parsePhotoURL: String
@@ -34,35 +39,9 @@ class GymListing: PFObject, PFSubclassing {
         get { return NSURL(string: self.parsePhotoURL ?? "") }
     }
 
-    @NSManaged var parseEquipment: String
-    var equipment: String {
-        get { return self.parseEquipment }
-    }
-    
-    @NSManaged var parsePrice: Int
-    var price: USCents {
-        return self.parsePrice
-    }
-    
-    @NSManaged var parseAvailabilities: NSArray
-    var availabilities: [NSDate: (NSDate, NSDate)] {
-        get {
-            var availabilities: [NSDate: (NSDate, NSDate)] = [:]
-            for cluster in self.parseAvailabilities {
-                availabilities[cluster[0] as! NSDate] = (cluster[1][0] as! NSDate, cluster[1][1] as! NSDate)
-            }
-            
-            return availabilities
-        }
-        
-        set {
-            var availabilities = NSMutableArray()
-            for (date, times) in newValue {
-                availabilities.addObject([date, [times.0, times.1]])
-            }
-            
-            self.parseAvailabilities = availabilities
-        }
+    @NSManaged var parseDescription: String
+    var listingDescription: String {
+        get { return self.parseDescription }
     }
     
     // MARK: Initializers
@@ -70,14 +49,13 @@ class GymListing: PFObject, PFSubclassing {
         super.init()
     }
     
-    init(title: String, streetAddress: String, zipCode: String, price: USCents, equipment: String) {
+    init(title: String, description: String, price: Int) {
         super.init()
         
         self.parseTitle = title
-        self.parseLocation = ["street": streetAddress, "zip": zipCode]
-        self.parseEquipment = equipment
+        self.parseDescription = description
         self.parsePrice = price
-        self.parseAvailabilities = NSArray()
+        self.parseEmail = PFUser.currentUser()!.email!
     }
     
     // MARK: Class Initializers
@@ -96,17 +74,6 @@ class GymListing: PFObject, PFSubclassing {
     
     class func parseClassName() -> String {
         return "GymListing"
-    }
-    
-    // MARK: Accessors
-    func location(handler: (CLLocation?) -> Void) {
-        CLGeocoder().geocodeAddressString("\(self.streetAddress) \(self.zipCode)") { (results: [AnyObject]!, error: NSError!) in
-            if let placemark = results.first as? CLPlacemark {
-                handler(placemark.location)
-            } else {
-                handler(nil)
-            }
-        }
     }
     
     // MARK: Mutators
