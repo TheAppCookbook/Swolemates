@@ -59,7 +59,10 @@ class ListingViewController: UITableViewController {
     // MARK: Responders
     @IBAction func contactButtonWasPressed(sender: UIButton!) {
         if self.listing?.email != PFUser.currentUser()?.email {
-            let mailURL = NSURL(string: "mailto://\(self.listing!.email)")!
+            let subject = NSString(string: "Swolemates: \(self.listing!.title)").stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
+            let body = NSString(string: "Hey! I'd love to book some time in your home gym.\nWhen: ").stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
+            
+            let mailURL = NSURL(string: "mailto://\(self.listing!.email)?subject=\(subject)&body=\(body)")!
             UIApplication.sharedApplication().openURL(mailURL)
         } else { // Delete listing
             let alertController = UIAlertController(title: "You sure?",
