@@ -8,8 +8,12 @@
 
 import Parse
 import CoreLocation
+import AFNetworking
 
 class GymListing: PFObject, PFSubclassing {
+    // MARK: Constants
+    static let DidFinishSavingNotification: String = "DidFinishSavingNotification"
+    
     // MARK: Properties
     @NSManaged var parseTitle: String
     var title: String {
@@ -25,15 +29,14 @@ class GymListing: PFObject, PFSubclassing {
         return self.parseLocation["zip"] as! String
     }
     
-    @NSManaged var parsePicture: NSData
-    var picture: UIImage? {
-        return UIImage(data: self.parsePicture)
+    @NSManaged var parsePhotoURL: String
+    var photoURL: NSURL? {
+        get { return NSURL(string: self.parsePhotoURL ?? "") }
     }
-    
-    @NSManaged var parseEquipment: NSArray
-    var equipment: [String] {
-        get { return self.parseEquipment as! [String] }
-        set { self.parseEquipment = NSArray(array: newValue) }
+
+    @NSManaged var parseEquipment: String
+    var equipment: String {
+        get { return self.parseEquipment }
     }
     
     @NSManaged var parsePrice: Int
@@ -41,15 +44,40 @@ class GymListing: PFObject, PFSubclassing {
         return self.parsePrice
     }
     
+    @NSManaged var parseAvailabilities: NSArray
+    var availabilities: [NSDate: (NSDate, NSDate)] {
+        get {
+            var availabilities: [NSDate: (NSDate, NSDate)] = [:]
+            for cluster in self.parseAvailabilities {
+                availabilities[cluster[0] as! NSDate] = (cluster[1][0] as! NSDate, cluster[1][1] as! NSDate)
+            }
+            
+            return availabilities
+        }
+        
+        set {
+            var availabilities = NSMutableArray()
+            for (date, times) in newValue {
+                availabilities.addObject([date, [times.0, times.1]])
+            }
+            
+            self.parseAvailabilities = availabilities
+        }
+    }
+    
     // MARK: Initializers
-    required init(title: String, streetAddress: String, zipCode: String, price: USCents, picture: UIImage) {
+    override init() {
+        super.init()
+    }
+    
+    init(title: String, streetAddress: String, zipCode: String, price: USCents, equipment: String) {
         super.init()
         
         self.parseTitle = title
         self.parseLocation = ["street": streetAddress, "zip": zipCode]
-        self.parsePicture = UIImagePNGRepresentation(picture) ?? NSData()
-        self.parseEquipment = NSArray()
+        self.parseEquipment = equipment
         self.parsePrice = price
+        self.parseAvailabilities = NSArray()
     }
     
     // MARK: Class Initializers
@@ -59,6 +87,13 @@ class GymListing: PFObject, PFSubclassing {
     }
     
     // MARK: Class Accessors
+    class func allFromServer(completion: ([GymListing]) -> Void) {
+        let query = PFQuery(className: self.parseClassName())
+        query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) in
+            completion(objects as! [GymListing])
+        }
+    }
+    
     class func parseClassName() -> String {
         return "GymListing"
     }
@@ -71,6 +106,32 @@ class GymListing: PFObject, PFSubclassing {
             } else {
                 handler(nil)
             }
+        }
+    }
+    
+    // MARK: Mutators
+    func setPhoto(photo: UIImage, completion: (NSURL?) -> Void) {
+        if let photoData = UIImagePNGRepresentation(photo) {
+            let encodedData = photoData.base64EncodedStringWithOptions(nil)
+            
+            let manager = AFHTTPRequestOperationManager()
+            manager.responseSerializer = AFJSONResponseSerializer()
+            manager.requestSerializer.setValue("Client-ID 5c4f0c2de0df9d3", forHTTPHeaderField: "Authorization")
+            
+            manager.POST("https://api.imgur.com/3/image", parameters: ["image": encodedData], success: { (op: AFHTTPRequestOperation!, response: AnyObject!) in
+                self.parsePhotoURL = (response["data"] as! NSDictionary)["link"] as! String
+                completion(self.photoURL)
+            }, failure: { (op: AFHTTPRequestOperation!, error: NSError!) in
+                completion(nil)
+            })
+        }
+    }
+    
+    func saveAndNotify() -> Void {
+        self.saveInBackgroundWithBlock { (success: Bool, error: NSError?) in
+            NSNotificationCenter.defaultCenter().postNotificationName(GymListing.DidFinishSavingNotification,
+                object: self,
+                userInfo: ["error": error ?? NSNull()] as [NSObject : AnyObject])
         }
     }
 }

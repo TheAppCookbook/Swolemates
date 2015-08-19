@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>AFNetworking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Bolts.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -29,30 +34,55 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>RMActionController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>RMDateSelectionViewController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>03F2BAE5EE0AADBD4D3282C0EE71BA06</key>
+		<key>0C52C343FBA7992797527B034B0B9E06</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>0A91C50CE5AFFA41D22F74282AAD3DC0</key>
+		<key>4D33C7B67DB44F4B991888C307F8BF03</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>12E43E43987AF40CC2FE4D34714295BF</key>
+		<key>5CA6EFAB9AB613E9BAA2EFFBB89182A3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5EAE7BED2C1045A5B954C5D50E2ADB4D</key>
+		<key>6A61DC947FF5445A93202E50FADA358E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F0AA8CC233C0AC9A1BD49AAD957520C7</key>
+		<key>867A8B47E587BD891461517EDE23170F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>894D520BC5C083F3D2F735C549AC50F7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>90409B4D27A8E7818750C8C593C5F14B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9AD03F6D418BB9D63BE67ACC88D44615</key>
 		<dict>
 			<key>primary</key>
 			<true/>

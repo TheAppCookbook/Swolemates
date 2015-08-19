@@ -17,9 +17,14 @@
 		73454E9F1B839F6C00DB0C76 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73454E9E1B839F6C00DB0C76 /* Currency.swift */; };
 		73454EA11B83A21100DB0C76 /* LocationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73454EA01B83A21100DB0C76 /* LocationExtensions.swift */; };
 		73454EA81B83BF9700DB0C76 /* PostDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73454EA71B83BF9700DB0C76 /* PostDescriptionViewController.swift */; };
-		73454EAC1B83C12100DB0C76 /* PostEquipmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73454EAB1B83C12100DB0C76 /* PostEquipmentViewController.swift */; };
 		73454EAE1B83C2B400DB0C76 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73454EAD1B83C2B400DB0C76 /* PostViewController.swift */; };
 		73454EB01B83C2F100DB0C76 /* PostAvailabilityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73454EAF1B83C2F100DB0C76 /* PostAvailabilityViewController.swift */; };
+		73454EB21B83EF4000DB0C76 /* BorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73454EB11B83EF4000DB0C76 /* BorderedButton.swift */; };
+		73D1615D1B83FB8100E4E6F4 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D1615C1B83FB8100E4E6F4 /* DateExtensions.swift */; };
+		73D1615F1B83FFEB00E4E6F4 /* ImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D1615E1B83FFEB00E4E6F4 /* ImageExtensions.swift */; };
+		73D161611B840FFB00E4E6F4 /* UserExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D161601B840FFB00E4E6F4 /* UserExtensions.swift */; };
+		73D161631B8410BA00E4E6F4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D161621B8410BA00E4E6F4 /* LoginViewController.swift */; };
+		73D161651B8415D600E4E6F4 /* ListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D161641B8415D600E4E6F4 /* ListingViewController.swift */; };
 		970FEDFFD01A19835E9A3660 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FB4F60CE10F2C395AADA5A3 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -51,9 +56,14 @@
 		73454E9E1B839F6C00DB0C76 /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		73454EA01B83A21100DB0C76 /* LocationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationExtensions.swift; sourceTree = "<group>"; };
 		73454EA71B83BF9700DB0C76 /* PostDescriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDescriptionViewController.swift; sourceTree = "<group>"; };
-		73454EAB1B83C12100DB0C76 /* PostEquipmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostEquipmentViewController.swift; sourceTree = "<group>"; };
 		73454EAD1B83C2B400DB0C76 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		73454EAF1B83C2F100DB0C76 /* PostAvailabilityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostAvailabilityViewController.swift; sourceTree = "<group>"; };
+		73454EB11B83EF4000DB0C76 /* BorderedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderedButton.swift; sourceTree = "<group>"; };
+		73D1615C1B83FB8100E4E6F4 /* DateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
+		73D1615E1B83FFEB00E4E6F4 /* ImageExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageExtensions.swift; sourceTree = "<group>"; };
+		73D161601B840FFB00E4E6F4 /* UserExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserExtensions.swift; sourceTree = "<group>"; };
+		73D161621B8410BA00E4E6F4 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		73D161641B8415D600E4E6F4 /* ListingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +128,7 @@
 				73454E7B1B839B7E00DB0C76 /* AppDelegate.swift */,
 				73454EA91B83BF9C00DB0C76 /* View Controllers */,
 				73454E9D1B839EA700DB0C76 /* Models */,
+				73454EB31B83EF4400DB0C76 /* Views */,
 				73454EA21B83A21300DB0C76 /* Categories */,
 				73454E821B839B7E00DB0C76 /* Images.xcassets */,
 				73454E841B839B7E00DB0C76 /* LaunchScreen.xib */,
@@ -164,6 +175,9 @@
 			isa = PBXGroup;
 			children = (
 				73454EA01B83A21100DB0C76 /* LocationExtensions.swift */,
+				73D1615C1B83FB8100E4E6F4 /* DateExtensions.swift */,
+				73D1615E1B83FFEB00E4E6F4 /* ImageExtensions.swift */,
+				73D161601B840FFB00E4E6F4 /* UserExtensions.swift */,
 			);
 			name = Categories;
 			path = ..;
@@ -174,6 +188,8 @@
 			children = (
 				73454E7F1B839B7E00DB0C76 /* Main.storyboard */,
 				73454E7D1B839B7E00DB0C76 /* DiscoverViewController.swift */,
+				73D161641B8415D600E4E6F4 /* ListingViewController.swift */,
+				73D161621B8410BA00E4E6F4 /* LoginViewController.swift */,
 				73454EAA1B83C10E00DB0C76 /* Post View Controllers */,
 			);
 			name = "View Controllers";
@@ -184,10 +200,17 @@
 			children = (
 				73454EAD1B83C2B400DB0C76 /* PostViewController.swift */,
 				73454EA71B83BF9700DB0C76 /* PostDescriptionViewController.swift */,
-				73454EAB1B83C12100DB0C76 /* PostEquipmentViewController.swift */,
 				73454EAF1B83C2F100DB0C76 /* PostAvailabilityViewController.swift */,
 			);
 			name = "Post View Controllers";
+			sourceTree = "<group>";
+		};
+		73454EB31B83EF4400DB0C76 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				73454EB11B83EF4000DB0C76 /* BorderedButton.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,13 +365,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				73454EAE1B83C2B400DB0C76 /* PostViewController.swift in Sources */,
+				73D1615D1B83FB8100E4E6F4 /* DateExtensions.swift in Sources */,
+				73D1615F1B83FFEB00E4E6F4 /* ImageExtensions.swift in Sources */,
 				73454EA81B83BF9700DB0C76 /* PostDescriptionViewController.swift in Sources */,
+				73454EB21B83EF4000DB0C76 /* BorderedButton.swift in Sources */,
 				73454EA11B83A21100DB0C76 /* LocationExtensions.swift in Sources */,
 				73454E7E1B839B7E00DB0C76 /* DiscoverViewController.swift in Sources */,
 				73454EB01B83C2F100DB0C76 /* PostAvailabilityViewController.swift in Sources */,
 				73454E9C1B839EA400DB0C76 /* GymListing.swift in Sources */,
-				73454EAC1B83C12100DB0C76 /* PostEquipmentViewController.swift in Sources */,
 				73454E9F1B839F6C00DB0C76 /* Currency.swift in Sources */,
+				73D161611B840FFB00E4E6F4 /* UserExtensions.swift in Sources */,
+				73D161651B8415D600E4E6F4 /* ListingViewController.swift in Sources */,
+				73D161631B8410BA00E4E6F4 /* LoginViewController.swift in Sources */,
 				73454E7C1B839B7E00DB0C76 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

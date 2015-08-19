@@ -8,14 +8,56 @@
 
 import UIKit
 import GradientView
+import Parse
 
 class DiscoverViewController: UITableViewController {
+    // MARK: Properties
+    private var listings: [GymListing] = []
+    
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.tableView.layoutMargins = UIEdgeInsets()
-        self.tableView.reloadData()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self,
+            selector: "listingWasSaved:",
+            name: GymListing.DidFinishSavingNotification,
+            object: nil)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        if PFUser.currentUser()?.venmoUsername == nil {
+            self.performSegueWithIdentifier("Login", sender: nil)
+        }
+        
+        self.reloadData()
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        switch segue.identifier {
+        case .Some("PushDetail"):
+            let listing = sender as! GymListing
+            (segue.destinationViewController as! ListingViewController).listing = listing
+        default:
+            break
+        }
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    // MARK: Data Handlers
+    func reloadData() {
+        GymListing.allFromServer { (listings: [GymListing]) in
+            self.listings = listings
+            self.tableView.reloadData()
+        }
+    }
+    
+    // MARK: Repsponders
+    func listingWasSaved(notification: NSNotification!) {
+        self.reloadData()
     }
 }
 
@@ -25,14 +67,15 @@ extension DiscoverViewController: UITableViewDataSource {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.listings.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("GymListing") as! UITableViewCell
+        let listing = self.listings[indexPath.row]
         
         let imageView = cell.viewWithTag(1) as! UIImageView
-        imageView.image = UIImage(named: "TestImage")
+        imageView.setImageWithURL(listing.photoURL)
         
         let topGradientView = cell.viewWithTag(5) as! GradientView
         topGradientView.colors = [
@@ -47,5 +90,12 @@ extension DiscoverViewController: UITableViewDataSource {
         ]
         
         return cell
+    }
+}
+
+extension DiscoverViewController: UITableViewDelegate {
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let listing = self.listings[indexPath.row]
+        self.performSegueWithIdentifier("PushDetail", sender: listing)
     }
 }
