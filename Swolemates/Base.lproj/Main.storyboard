@@ -265,6 +265,7 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="W8L-Ok-Zlq">
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.63137254899999995" green="0.69411764710000001" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
                         <connections>
                             <action selector="refreshControlWasTrigger:" destination="ctT-Je-lHN" eventType="valueChanged" id="M1Y-Ry-D39"/>
                         </connections>
@@ -528,13 +529,13 @@
                         <sections>
                             <tableViewSection headerTitle="Facilities &amp; Equipment" id="4sX-MR-83D">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" verticalHuggingPriority="1" verticalCompressionResistancePriority="1000" selectionStyle="default" indentationWidth="10" id="ceD-vX-s0k">
+                                    <tableViewCell contentMode="scaleToFill" verticalHuggingPriority="1" verticalCompressionResistancePriority="1000" selectionStyle="default" indentationWidth="10" rowHeight="60" id="ceD-vX-s0k">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" verticalHuggingPriority="1" verticalCompressionResistancePriority="1000" tableViewCell="ceD-vX-s0k" id="ZVF-xM-mIi">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1" verticalCompressionResistancePriority="1000" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z3C-8e-gsR">
-                                                    <rect key="frame" x="18" y="11" width="564" height="22"/>
+                                                    <rect key="frame" x="18" y="11" width="564" height="38"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="22" id="rlL-Vi-R97"/>
                                                     </constraints>
@@ -809,10 +810,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Sp2-LX-ksi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" red="0.2666666667" green="0.3411764706" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="0.90196078430000004" green="0.51372549020000002" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
-                        </textAttributes>
+                        <color key="tintColor" red="0.63137254899999995" green="0.69411764710000001" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="ctT-Je-lHN" kind="relationship" relationship="rootViewController" id="ZIn-jf-8Bk"/>

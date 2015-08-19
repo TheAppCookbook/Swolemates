@@ -30,18 +30,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Appearance
         UINavigationBar.appearance().titleTextAttributes = [
-            NSFontAttributeName: UIFont(name: "OpenSans-Semibold", size: 15.0)!
+            NSFontAttributeName: UIFont.swoleSemiBoldFontWithSize(15.0)
         ]
         
         UIBarButtonItem.appearance().setTitleTextAttributes([
-            NSFontAttributeName: UIFont(name: "OpenSans-Semibold", size: 15.0)!
+            NSFontAttributeName: UIFont.swoleSemiBoldFontWithSize(15.0)
         ], forState: .Normal)
         
-        UILabel.appearanceWhenContainedInClass(UITableViewHeaderFooterView).font = UIFont(name: "OpenSans-Semibold", size: 15.0)!
-        UILabel.appearanceWhenContainedInClass(UITableViewHeaderFooterView).textColor = UIColor(red: 0.63,
-            green: 0.69,
-            blue: 0.73,
-            alpha: 1.00)
+        UILabel.appearanceWhenContainedInClass(UITableViewHeaderFooterView).font = UIFont.swoleSemiBoldFontWithSize(15.0)
+        UILabel.appearanceWhenContainedInClass(UITableViewHeaderFooterView).textColor = UIColor.swoleLightColor()
         
         return true
     }

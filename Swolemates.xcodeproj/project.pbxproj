@@ -10,6 +10,7 @@
 		732FC3181B84498900DB69A5 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 732FC3161B84498900DB69A5 /* OpenSans-Regular.ttf */; };
 		732FC3191B84498900DB69A5 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 732FC3171B84498900DB69A5 /* OpenSans-Semibold.ttf */; };
 		732FC31D1B8450E300DB69A5 /* AppearanceExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 732FC31C1B8450E300DB69A5 /* AppearanceExtensions.m */; };
+		732FC31F1B84541E00DB69A5 /* SwoleStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732FC31E1B84541E00DB69A5 /* SwoleStyles.swift */; };
 		73454E7C1B839B7E00DB0C76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73454E7B1B839B7E00DB0C76 /* AppDelegate.swift */; };
 		73454E7E1B839B7E00DB0C76 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73454E7D1B839B7E00DB0C76 /* DiscoverViewController.swift */; };
 		73454E811B839B7E00DB0C76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73454E7F1B839B7E00DB0C76 /* Main.storyboard */; };
@@ -47,6 +48,7 @@
 		732FC31A1B8450E200DB69A5 /* Swolemates-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Swolemates-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		732FC31B1B8450E300DB69A5 /* AppearanceExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppearanceExtensions.h; sourceTree = "<group>"; };
 		732FC31C1B8450E300DB69A5 /* AppearanceExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppearanceExtensions.m; sourceTree = "<group>"; };
+		732FC31E1B84541E00DB69A5 /* SwoleStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwoleStyles.swift; sourceTree = "<group>"; };
 		73454E761B839B7E00DB0C76 /* Swolemates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swolemates.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73454E7A1B839B7E00DB0C76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73454E7B1B839B7E00DB0C76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				73D1615E1B83FFEB00E4E6F4 /* ImageExtensions.swift */,
 				732FC31B1B8450E300DB69A5 /* AppearanceExtensions.h */,
 				732FC31C1B8450E300DB69A5 /* AppearanceExtensions.m */,
+				732FC31E1B84541E00DB69A5 /* SwoleStyles.swift */,
 			);
 			name = Categories;
 			path = ..;
@@ -368,6 +371,7 @@
 				73D1615F1B83FFEB00E4E6F4 /* ImageExtensions.swift in Sources */,
 				73454EB21B83EF4000DB0C76 /* BorderedButton.swift in Sources */,
 				73D161671B84257900E4E6F4 /* CreateListingViewController.swift in Sources */,
+				732FC31F1B84541E00DB69A5 /* SwoleStyles.swift in Sources */,
 				732FC31D1B8450E300DB69A5 /* AppearanceExtensions.m in Sources */,
 				73454EA11B83A21100DB0C76 /* LocationExtensions.swift in Sources */,
 				73454E7E1B839B7E00DB0C76 /* DiscoverViewController.swift in Sources */,

@@ -24,6 +24,8 @@ class DiscoverViewController: UITableViewController {
             selector: "listingWasSaved:",
             name: GymListing.DidFinishSavingNotification,
             object: nil)
+        
+        self.refreshControl?.tintColor = UIColor.swoleLightColor()
     }
     
     override func viewDidAppear(animated: Bool) {
