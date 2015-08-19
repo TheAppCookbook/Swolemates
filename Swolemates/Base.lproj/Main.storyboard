@@ -466,7 +466,7 @@
         <scene sceneID="3lc-hD-DtU">
             <objects>
                 <tableViewController id="MPr-yd-6Ow" customClass="ListingViewController" customModule="Swolemates" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="dY2-Td-Qs3">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="60" sectionHeaderHeight="10" sectionFooterHeight="10" id="dY2-Td-Qs3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -529,7 +529,7 @@
                         <sections>
                             <tableViewSection headerTitle="Facilities &amp; Equipment" id="4sX-MR-83D">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" verticalHuggingPriority="1" verticalCompressionResistancePriority="1000" selectionStyle="default" indentationWidth="10" rowHeight="60" id="ceD-vX-s0k">
+                                    <tableViewCell contentMode="scaleToFill" verticalHuggingPriority="1" verticalCompressionResistancePriority="1000" selectionStyle="default" indentationWidth="10" id="ceD-vX-s0k">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" verticalHuggingPriority="1" verticalCompressionResistancePriority="1000" tableViewCell="ceD-vX-s0k" id="ZVF-xM-mIi">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -537,18 +537,24 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1" verticalCompressionResistancePriority="1000" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z3C-8e-gsR">
                                                     <rect key="frame" x="18" y="11" width="564" height="38"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="564" id="3Jx-G1-Wyp"/>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="22" id="rlL-Vi-R97"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="3Jx-G1-Wyp"/>
+                                                        </mask>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="z3C-8e-gsR" secondAttribute="bottom" constant="2.5" id="3tU-0C-WjK"/>
                                                 <constraint firstItem="z3C-8e-gsR" firstAttribute="leading" secondItem="ZVF-xM-mIi" secondAttribute="leadingMargin" constant="10" id="4aY-or-6Ab"/>
+                                                <constraint firstItem="z3C-8e-gsR" firstAttribute="top" secondItem="ZVF-xM-mIi" secondAttribute="topMargin" constant="3" id="HRS-uN-3St"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="z3C-8e-gsR" secondAttribute="trailing" constant="10" id="NJd-Vh-ecQ"/>
-                                                <constraint firstItem="z3C-8e-gsR" firstAttribute="top" secondItem="ZVF-xM-mIi" secondAttribute="topMargin" constant="3" id="iOi-Lj-rlY"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
