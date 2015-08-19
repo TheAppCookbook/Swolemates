@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		732FC3181B84498900DB69A5 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 732FC3161B84498900DB69A5 /* OpenSans-Regular.ttf */; };
+		732FC3191B84498900DB69A5 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 732FC3171B84498900DB69A5 /* OpenSans-Semibold.ttf */; };
+		732FC31D1B8450E300DB69A5 /* AppearanceExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 732FC31C1B8450E300DB69A5 /* AppearanceExtensions.m */; };
 		73454E7C1B839B7E00DB0C76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73454E7B1B839B7E00DB0C76 /* AppDelegate.swift */; };
 		73454E7E1B839B7E00DB0C76 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73454E7D1B839B7E00DB0C76 /* DiscoverViewController.swift */; };
 		73454E811B839B7E00DB0C76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73454E7F1B839B7E00DB0C76 /* Main.storyboard */; };
@@ -39,6 +42,11 @@
 		0A3CB00F848FC2665E7F4AD8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		6080E4F39EAB8227DEBFC43E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		6FB4F60CE10F2C395AADA5A3 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		732FC3161B84498900DB69A5 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		732FC3171B84498900DB69A5 /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
+		732FC31A1B8450E200DB69A5 /* Swolemates-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Swolemates-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		732FC31B1B8450E300DB69A5 /* AppearanceExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppearanceExtensions.h; sourceTree = "<group>"; };
+		732FC31C1B8450E300DB69A5 /* AppearanceExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppearanceExtensions.m; sourceTree = "<group>"; };
 		73454E761B839B7E00DB0C76 /* Swolemates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swolemates.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73454E7A1B839B7E00DB0C76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73454E7B1B839B7E00DB0C76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +134,9 @@
 				73454EA21B83A21300DB0C76 /* Categories */,
 				73454E821B839B7E00DB0C76 /* Images.xcassets */,
 				73454E841B839B7E00DB0C76 /* LaunchScreen.xib */,
+				732FC3161B84498900DB69A5 /* OpenSans-Regular.ttf */,
+				732FC3171B84498900DB69A5 /* OpenSans-Semibold.ttf */,
+				732FC31A1B8450E200DB69A5 /* Swolemates-Bridging-Header.h */,
 				73454E791B839B7E00DB0C76 /* Supporting Files */,
 			);
 			path = Swolemates;
@@ -170,6 +181,8 @@
 				73454EA01B83A21100DB0C76 /* LocationExtensions.swift */,
 				73D1615C1B83FB8100E4E6F4 /* DateExtensions.swift */,
 				73D1615E1B83FFEB00E4E6F4 /* ImageExtensions.swift */,
+				732FC31B1B8450E300DB69A5 /* AppearanceExtensions.h */,
+				732FC31C1B8450E300DB69A5 /* AppearanceExtensions.m */,
 			);
 			name = Categories;
 			path = ..;
@@ -282,7 +295,9 @@
 			files = (
 				73454E811B839B7E00DB0C76 /* Main.storyboard in Resources */,
 				73454E861B839B7E00DB0C76 /* LaunchScreen.xib in Resources */,
+				732FC3181B84498900DB69A5 /* OpenSans-Regular.ttf in Resources */,
 				73454E831B839B7E00DB0C76 /* Images.xcassets in Resources */,
+				732FC3191B84498900DB69A5 /* OpenSans-Semibold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +368,7 @@
 				73D1615F1B83FFEB00E4E6F4 /* ImageExtensions.swift in Sources */,
 				73454EB21B83EF4000DB0C76 /* BorderedButton.swift in Sources */,
 				73D161671B84257900E4E6F4 /* CreateListingViewController.swift in Sources */,
+				732FC31D1B8450E300DB69A5 /* AppearanceExtensions.m in Sources */,
 				73454EA11B83A21100DB0C76 /* LocationExtensions.swift in Sources */,
 				73454E7E1B839B7E00DB0C76 /* DiscoverViewController.swift in Sources */,
 				73454E9C1B839EA400DB0C76 /* GymListing.swift in Sources */,
@@ -486,12 +502,15 @@
 			baseConfigurationReference = 0A3CB00F848FC2665E7F4AD8 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Swolemates/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Swolemates-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -500,12 +519,14 @@
 			baseConfigurationReference = 6080E4F39EAB8227DEBFC43E /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Swolemates/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Swolemates-Bridging-Header.h";
 			};
 			name = Release;
 		};
