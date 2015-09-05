@@ -82,7 +82,7 @@ class ListingViewController: UITableViewController {
     }
 }
 
-extension ListingViewController: UITableViewDelegate {
+extension ListingViewController { // UITableViewDelegate
     override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }

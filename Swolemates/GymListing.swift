@@ -79,7 +79,7 @@ class GymListing: PFObject, PFSubclassing {
     // MARK: Mutators
     func setPhoto(photo: UIImage, completion: (NSURL?) -> Void) {
         if let photoData = UIImagePNGRepresentation(photo) {
-            let encodedData = photoData.base64EncodedStringWithOptions(nil)
+            let encodedData = photoData.base64EncodedStringWithOptions([])
             
             let manager = AFHTTPRequestOperationManager()
             manager.responseSerializer = AFJSONResponseSerializer()

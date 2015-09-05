@@ -61,7 +61,7 @@ class DiscoverViewController: UITableViewController {
     // MARK: Data Handlers
     func reloadData() {
         GymListing.allFromServer { (listings: [GymListing]) in
-            self.listings = listings.reverse()
+            self.listings = Array(listings.reverse())
             self.tableView.reloadData()
         }
     }
@@ -77,7 +77,7 @@ class DiscoverViewController: UITableViewController {
     }
 }
 
-extension DiscoverViewController: UITableViewDataSource {
+extension DiscoverViewController { // UITableViewDataSource
    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -87,7 +87,7 @@ extension DiscoverViewController: UITableViewDataSource {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("GymListing") as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("GymListing") as UITableViewCell!
         let listing = self.listings[indexPath.row]
         
         let imageView = cell.viewWithTag(1) as! UIImageView
@@ -115,7 +115,7 @@ extension DiscoverViewController: UITableViewDataSource {
     }
 }
 
-extension DiscoverViewController: UITableViewDelegate {
+extension DiscoverViewController { // UITableViewDelegate
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let listing = self.listings[indexPath.row]
         self.performSegueWithIdentifier("PushDetail", sender: listing)

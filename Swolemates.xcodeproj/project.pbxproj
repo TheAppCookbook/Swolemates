@@ -259,6 +259,7 @@
 		73454E6E1B839B7E00DB0C76 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = AppCookbook;
 				TargetAttributes = {

@@ -11,7 +11,7 @@ import CoreLocation
 extension CLLocationCoordinate2D {
     // MARK: Initializers
     init(string: String) {
-        var trimmedString = string.stringByTrimmingCharactersInSet(NSCharacterSet.punctuationCharacterSet())
+        let trimmedString = string.stringByTrimmingCharactersInSet(NSCharacterSet.punctuationCharacterSet())
         var coordinates = trimmedString.componentsSeparatedByString(",") as [NSString]
         self.init(latitude: CLLocationDegrees(coordinates[0].doubleValue),
             longitude: CLLocationDegrees(coordinates[1].doubleValue))
@@ -26,12 +26,16 @@ extension CLLocationCoordinate2D {
 extension CLLocation {
     // MARK: Class Accessors
     class func validateUSZipCode(zipCode: String) -> Bool {
-        let regex = NSRegularExpression(pattern: "^\\d{5}(-\\d{4})?$",
-            options: nil,
-            error: nil)
+        let regex: NSRegularExpression?
+        do {
+            regex = try NSRegularExpression(pattern: "^\\d{5}(-\\d{4})?$",
+                        options: [])
+        } catch _ {
+            regex = nil
+        }
         
         return regex?.matchesInString(zipCode,
-            options: nil,
+            options: [],
             range: NSMakeRange(0, zipCode.lengthOfBytesUsingEncoding(NSUTF8StringEncoding))).count > 0
     }
 }

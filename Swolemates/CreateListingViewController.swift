@@ -28,10 +28,10 @@ class CreateListingViewController: UITableViewController {
     }
     
     private var inputValid: Bool {
-        return (self.titleField.text.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 0) &&
-            (self.descriptionField.text.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 0) &&
+        return (self.titleField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 0) &&
+            (self.descriptionField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 0) &&
             (self.photo != nil) &&
-            (self.priceField.text.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 0)
+            (self.priceField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 0)
     }
     
     // MARK: Responders
@@ -64,7 +64,7 @@ class CreateListingViewController: UITableViewController {
 }
 
 extension CreateListingViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: AnyObject]) {
         self.photo = info[UIImagePickerControllerOriginalImage] as? UIImage
         picker.dismissViewControllerAnimated(true,
             completion: nil)

@@ -19,8 +19,8 @@ class LoginViewController: UIViewController {
     @IBOutlet var forgotPasswordButton: UIButton!
     
     private var inputValid: Bool {
-        return (self.emailInputField.text.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 0) &&
-            (self.passwordInputField.text.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 0)
+        return (self.emailInputField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 0) &&
+            (self.passwordInputField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 0)
     }
     
     // MARK: Responders
@@ -37,8 +37,8 @@ class LoginViewController: UIViewController {
             self.registerButton.hidden = true
             self.activityIndicator.startAnimating()
             
-            let email = self.emailInputField.text
-            let password = self.passwordInputField.text
+            let email = self.emailInputField.text!
+            let password = self.passwordInputField.text!
             
             PFUser.logInWithUsernameInBackground(email, password: password) { (user: PFUser?, error: NSError?) in
                 if user != nil {
@@ -66,7 +66,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func forgotPasswordButtonWasPressed(sender: UIButton!) {
-        PFUser.requestPasswordResetForEmailInBackground(self.emailInputField.text, block: { (success: Bool, error: NSError?) in
+        PFUser.requestPasswordResetForEmailInBackground(self.emailInputField.text!, block: { (success: Bool, error: NSError?) in
             if success {
                 self.detailTextLabel.text = "Alright! Go check your email 🐵"
             } else {
@@ -79,7 +79,7 @@ class LoginViewController: UIViewController {
         self.registerButton.enabled = self.inputValid
         self.registerButton.alpha = self.registerButton.enabled ? 1.0 : 0.5
         
-        self.forgotPasswordButton.hidden = (self.emailInputField.text.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) == 0)
+        self.forgotPasswordButton.hidden = (self.emailInputField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) == 0)
     }
 }
 
