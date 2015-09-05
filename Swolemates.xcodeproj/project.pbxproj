@@ -20,6 +20,7 @@
 		73454E9C1B839EA400DB0C76 /* GymListing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73454E9B1B839EA400DB0C76 /* GymListing.swift */; };
 		73454EA11B83A21100DB0C76 /* LocationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73454EA01B83A21100DB0C76 /* LocationExtensions.swift */; };
 		73454EB21B83EF4000DB0C76 /* BorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73454EB11B83EF4000DB0C76 /* BorderedButton.swift */; };
+		737821211B9B8E4700699F01 /* KeyboardLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737821201B9B8E4700699F01 /* KeyboardLayoutConstraint.swift */; };
 		73D1615D1B83FB8100E4E6F4 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D1615C1B83FB8100E4E6F4 /* DateExtensions.swift */; };
 		73D1615F1B83FFEB00E4E6F4 /* ImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D1615E1B83FFEB00E4E6F4 /* ImageExtensions.swift */; };
 		73D161671B84257900E4E6F4 /* CreateListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D161661B84257900E4E6F4 /* CreateListingViewController.swift */; };
@@ -62,6 +63,7 @@
 		73454E9B1B839EA400DB0C76 /* GymListing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GymListing.swift; sourceTree = "<group>"; };
 		73454EA01B83A21100DB0C76 /* LocationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationExtensions.swift; sourceTree = "<group>"; };
 		73454EB11B83EF4000DB0C76 /* BorderedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderedButton.swift; sourceTree = "<group>"; };
+		737821201B9B8E4700699F01 /* KeyboardLayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardLayoutConstraint.swift; sourceTree = "<group>"; };
 		73D1615C1B83FB8100E4E6F4 /* DateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		73D1615E1B83FFEB00E4E6F4 /* ImageExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageExtensions.swift; sourceTree = "<group>"; };
 		73D161661B84257900E4E6F4 /* CreateListingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateListingViewController.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				73454EB11B83EF4000DB0C76 /* BorderedButton.swift */,
+				737821201B9B8E4700699F01 /* KeyboardLayoutConstraint.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 				73454E7E1B839B7E00DB0C76 /* DiscoverViewController.swift in Sources */,
 				73454E9C1B839EA400DB0C76 /* GymListing.swift in Sources */,
 				73D1616B1B84355600E4E6F4 /* AboutViewController.swift in Sources */,
+				737821211B9B8E4700699F01 /* KeyboardLayoutConstraint.swift in Sources */,
 				73454E7C1B839B7E00DB0C76 /* AppDelegate.swift in Sources */,
 				73D1616D1B84399300E4E6F4 /* LoginViewController.swift in Sources */,
 			);
